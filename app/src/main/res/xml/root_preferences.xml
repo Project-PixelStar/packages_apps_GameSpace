@@ -76,7 +76,7 @@
             android:summary="@string/stay_awake_summary"
             android:title="@string/stay_awake_title" />
 
-        <org.derpfest.support.preferences.CustomSeekBarPreference
+        <com.android.settings.custom.preference.CustomSeekBarPreference
             android:key="gamespace_menu_opacity"
             android:title="@string/gamespace_menu_opacity_title"
             android:defaultValue="100"
