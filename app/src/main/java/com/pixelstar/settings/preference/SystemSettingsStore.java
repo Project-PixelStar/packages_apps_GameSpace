@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2022 Evolution X
+ * Copyright (C) 2019-2022 pixelstar
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.evolution.settings.preference;
+package com.pixelstar.settings.preference;
 
 import android.content.ContentResolver;
 import android.preference.PreferenceDataStore;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2022 Evolution X
+ * Copyright (C) 2019-2022 pixelstar
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,25 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.evolution.settings.preference;
+package com.pixelstar.settings.preference;
 
 import android.content.Context;
+import android.provider.Settings;
+import android.os.UserHandle;
 import android.util.AttributeSet;
 
-public class SystemSettingSeekBarPreference extends CustomSeekBarPreference {
+import com.android.settingslib.widget.MainSwitchPreference;
 
-    public SystemSettingSeekBarPreference(Context context, AttributeSet attrs, int defStyle) {
+import com.pixelstar.settings.preference.SystemSettingsStore;
+
+public class SystemSettingMainSwitchPreference extends MainSwitchPreference {
+
+    public SystemSettingMainSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingSeekBarPreference(Context context, AttributeSet attrs) {
+    public SystemSettingMainSwitchPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingSeekBarPreference(Context context) {
-        super(context, null);
+    public SystemSettingMainSwitchPreference(Context context) {
+        super(context);
         setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
 }

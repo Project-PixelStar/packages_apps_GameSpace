@@ -50,7 +50,7 @@
             android:summary="%s"
             android:title="@string/ringer_mode_title" />
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
+        <com.pixelstar.settings.preference.SystemSettingSwitchPreference
             android:defaultValue="false"
             android:key="gamespace_suppress_fullscreen_intent"
             android:summary="@string/suppress_fullscreen_intent_summary"
@@ -80,7 +80,7 @@
             android:key="gamespace_adb_disabled"
             android:title="@string/adb_disabled_title" />
 
-        <com.evolution.settings.preference.CustomSeekBarPreference
+        <com.pixelstar.settings.preference.CustomSeekBarPreference
             android:key="gamespace_menu_opacity"
             android:title="@string/gamespace_menu_opacity_title"
             android:defaultValue="100"
