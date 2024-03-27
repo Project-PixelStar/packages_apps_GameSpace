@@ -133,8 +133,8 @@ class GameBarService : Hilt_GameBarService() {
         val frame = FrameLayout(this)
         rootBarView = LayoutInflater.from(this)
             .inflate(R.layout.window_util, frame, false)
-        barView = rootBarView.findViewById(R.id.container_bar)
-        menuSwitcher = rootBarView.findViewById(R.id.action_menu_switcher)
+        barView = rootBarView.requireViewById(R.id.container_bar)
+        menuSwitcher = rootBarView.requireViewById(R.id.action_menu_switcher)
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -272,7 +272,7 @@ class GameBarService : Hilt_GameBarService() {
     private fun setupPanelView() {
         rootPanelView = LayoutInflater.from(this)
             .inflate(R.layout.window_panel, FrameLayout(this), false) as LinearLayout
-        panelView = rootPanelView.findViewById(R.id.panel_view)
+        panelView = rootPanelView.requireViewById(R.id.panel_view)
         rootPanelView.setOnClickListener {
             showPanel = false
         }
@@ -334,21 +334,21 @@ class GameBarService : Hilt_GameBarService() {
     }
 
     private fun panelButton() {
-        val actionPanel = rootBarView.findViewById<ImageButton>(R.id.action_panel)
+        val actionPanel = rootBarView.requireViewById<ImageButton>(R.id.action_panel)
         actionPanel.setOnClickListener {
             showPanel = !showPanel
         }
     }
 
     private fun screenshotButton() {
-        val actionScreenshot = rootBarView.findViewById<ImageButton>(R.id.action_screenshot)
+        val actionScreenshot = rootBarView.requireViewById<ImageButton>(R.id.action_screenshot)
         actionScreenshot.setOnClickListener {
             takeShot()
         }
     }
 
     private fun recorderButton() {
-        val actionRecorder = rootBarView.findViewById<ImageButton>(R.id.action_record)
+        val actionRecorder = rootBarView.requireViewById<ImageButton>(R.id.action_record)
         val recorder = screenUtils.recorder ?: let { actionRecorder.isVisible = false; return }
         recorder.addRecordingCallback(object : IRecordingCallback.Stub() {
             override fun onRecordingStart() {
